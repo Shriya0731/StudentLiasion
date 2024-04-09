@@ -1,0 +1,234 @@
+ 
+
+
+    <!-- <div class="col-lg-6 px-lg-4" *ngIf="userregister">
+        <div class="card">
+          <div class="card-header px-lg-5">
+            <div class="card-heading text-primary"><h3>Register</h3></div>
+          </div>
+          <div class="card-body p-lg-5">
+          <h3 class="mb-4">Get started with Chamkila</h3>
+            <p class="text-muted text-sm mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p> -->
+            <!-- <form action="index.html">
+              <div class="form-floating mb-3">
+                <input class="form-control" id="username" type="email" placeholder="name@example.com" required
+                 [(ngModel)] = "students.name" name = "name">
+                <label for="username">Username</label>
+                
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="agree" id="agree">
+                <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" id="regidter" type="button" name="registerSubmit">Register</button>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer px-lg-5 py-lg-4">
+            <div class="text-sm text-muted">Already have an account? <a (click)="user_login()">Login</a>.</div>
+          </div>
+        </div>
+      </div> --> 
+<!-- <h3>Create Employee</h3> -->
+<!-- <div [hidden]="submitted" style="width: 400px;">
+  <div class="card">
+  <div class="card-header px-lg-5">
+  <div class="card-heading text-primary"><h3>Register</h3></div>
+  </div>  
+    <div class="card-body p-lg-5">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control item" id="username" placeholder="Username"
+          [(ngModel)] = "students.name" name = "name">
+          <label for="floatingInput">Name</label>
+        </div>
+    
+        <div class="form-floating mb-3">
+          <input class="form-control" id = "email" type="text" placeholder="name@example.com"
+              [(ngModel)] = "students.email" name = "email">
+              <label for="floatingInput">Email address</label>
+        </div>
+    
+        <div class="form-floating mb-3">
+          <input class="form-control" id = "pass" type="password" placeholder="Password" required
+          [(ngModel)] = "students.password" name = "pass">
+          <label for="floatingPassword">Password</label>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="agree" id="agree">
+            <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
+          </div>
+        </div>
+    
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+    <div class="card-footer px-lg-5 py-lg-4">
+      <div class="text-sm text-muted">Already have an account?
+       <a routerLink="login" class="nav-link" routerLinkActive="active">Login</a>.</div>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newEmployee()">Add</button>
+</div> -->
+  
+<head>
+  <title>Sky Forms</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  
+  <!-- <link rel="stylesheet" href="demo.css"> -->
+  <!-- <link rel="stylesheet" href="sky-forms.css"> -->
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="css/sky-forms-ie8.css">
+  <![endif]-->
+  
+  <!--[if lt IE 10]>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+  <![endif]-->    
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="js/sky-forms-ie8.js"></script>
+  <![endif]-->
+</head>
+<body class="bg-cyan">
+  <div class="body body-s">
+  
+    <form action="" id="InfoForm" #InfoForm="ngForm"class="sky-form">
+      <form (ngSubmit)="onSubmit()">
+      <header>Registration form</header>
+      
+      <fieldset>
+
+        <section>
+          <label class="input">
+            <input type="text" required placeholder="C Number"  id ="cno" [(ngModel)] = "students.cno" name = "cno">
+            <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+          </label>
+        </section>
+        
+        <section>
+          <label class="input">
+            <i class="icon-append icon-user"></i>
+            <input type="text" required placeholder="Name"  id ="name" [(ngModel)] = "students.name" name = "name">
+            <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+          </label>
+        </section>
+        
+        
+
+        <section>
+          <label class="input">
+            <i class="icon-append icon-envelope-alt"></i>
+            <input type="text" required placeholder="Email address"  id ="email" [(ngModel)] = "students.email" name = "email">
+            <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+          </label>
+        </section>
+        
+        <section>
+          <label class="input">
+            <i class="icon-append icon-lock"></i>
+            <input type="password" required placeholder="Password"  id ="password" [(ngModel)] = "students.password" name = "password">
+            <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+          </label>
+        </section>
+        
+        <section>
+          <label class="input">
+            <i class="icon-append icon-envelope-alt"></i>
+            <input type="text" required placeholder="Division" id ="div" [(ngModel)] = "students.div" name = "div">
+            <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+          </label>
+        </section>
+
+        <section>
+          <label class="select">
+            <i class="icon-append icon-envelope-alt"></i>
+            <!-- <input type="text" placeholder="Branch"> -->
+            <select placeholder="Branch" required id ="branch" [(ngModel)] = "students.branch" name = "branch">
+              <option value="0" selected disabled>Branch</option>
+              <option value="1">Computer Science</option>
+              <option value="2">Information Technology</option>
+              <option value="3">Electronics and Telecommunication</option>
+              <option value="4">Mechanical</option>
+              <option value="5">Instrumentation</option>               
+            </select>
+           
+            <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+          </label>
+        </section>
+        <!-- <div class="form-floating mb-3">
+          <input class="form-control" id = "emailId" type="text" placeholder="name@example.com"
+              [(ngModel)] = "teachers.emailid" name = "emailId">
+              <label for="floatingInput">Email address</label>
+        </div> -->
+        <section>
+          <label class="input">
+            <i class="icon-append icon-envelope-alt"></i>
+            <input type="text" required placeholder="Academic Year" id =" academicYear" [(ngModel)] = "students.academicYear" name = "academicYear" >
+            <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+          </label>
+        </section>
+
+        <section>
+          <label class="input">
+            <i class="icon-append icon-envelope-alt"></i>
+            <input type="text" required placeholder="Mobile Number" id ="mobileno" [(ngModel)] = "students.mobileno" name = "mobileno">
+            <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+          </label>
+        </section>
+        
+      </fieldset>
+        
+      <fieldset>
+        <!-- <div class="row">
+          <section class="col col-6">
+            <label class="input">
+              <input type="text" placeholder="First name">
+            </label>
+          </section>
+          <section class="col col-6">
+            <label class="input">
+              <input type="text" placeholder="Last name">
+            </label>
+          </section>
+        </div> -->
+        
+        <!-- <section>
+          <label class="select">
+            <select>
+              <option value="0" selected disabled>Gender</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select> -->
+            <i></i>
+          <!-- </label>
+        </section> -->
+        
+        <!-- <section>
+          <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>I agree to the Terms of Service</label>
+          <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>I want to receive news and  special offers</label>
+        </section> -->
+      </fieldset>
+      <footer>
+        <button type="submit" class="btn btn-primary btn-lg" style="margin-right: 100px;width:100px;height: 50px;" [disabled]="InfoForm.form.invalid">Submit</button>
+      </footer>
+    </form>
+    </form>
+    
+  </div>
+</body>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Details</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa; /* Light gray background */
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #343a40; /* Dark gray color for headings */
+    }
+    .student-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .student-detail {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .student-detail label {
+        font-weight: bold;
+        color: #6c757d; /* Medium gray color for labels */
+    }
+    .student-detail p {
+        margin: 5px 0;
+        color: #343a40; /* Dark gray color for text */
+    }
+    .event-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .event-table th, .event-table td {
+        border: 1px solid #dee2e6; /* Light gray border */
+        padding: 10px;
+        text-align: left;
+        color: #343a40; /* Dark gray color for table text */
+    }
+    .event-table th {
+        background-color: #427fc0; /* Blue color for table header */
+        color: #fff; /* White color for table header text */
+        font-weight: bold;
+    }
+    .btn-add-event {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        margin: 20px auto 0;
+        background-color: #427fc0; /* Blue background for button */
+        color: #fff; /* White color for button text */
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+    .btn-add-event:hover {
+        background-color: #0056b3; /* Darker blue color on hover */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome, {{user_name}}</h1>
+    <div class="student-details">
+        <div class="student-detail">
+            <label>Email:</label>
+            <p>{{user.email}}</p>
+        </div>
+        <div class="student-detail">
+            <label>Phone No:</label>
+            <p>{{user.mobileno}}</p>
+        </div>
+        <div class="student-detail">
+            <label>Branch:</label>
+            <p>{{user.branch}}</p>
+        </div>
+        <div class="student-detail">
+            <label>Academic Year:</label>
+            <p>{{user.academicYear}}</p>
+        </div>
+        <div class="student-detail">
+            <label>Cnumber:</label>
+            <p>{{user_cno}}</p>
+        </div>
+        <div class="student-detail">
+            <label>Division:</label>
+            <p>{{user.div}}</p>
+        </div>
+    </div>
+
+    <h2>Your Events</h2>
+    <table class="event-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Category</th>
+                <th>Organizer</th>
+                <th>Level</th>
+                <th>Date of Event</th>
+                <th>Participation Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of events">
+                <td>{{ e.eventname }}</td>
+                <td>{{ e.category }}</td>
+                <td>{{ e.oragnizer }}</td>
+                <td>{{ e.level }}</td>
+                <td>{{ e.doe }}</td>
+                <td>{{ e.participation_status }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn-add-event" (click)="GoToEventForm()">Add New Event</button>
+</div>
+</body>
+</html>

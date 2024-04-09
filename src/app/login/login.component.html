@@ -1,0 +1,52 @@
+ 
+<section class="vh-100"  style="background-image: url('');  background-size: cover;">
+<div [hidden]="submitted" >
+  <br><br>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+  <div class="card">
+    <div class="card-header px-lg-5">
+      <div class="card-heading text-primary"> <h2 class="text-uppercase text-center mb-0">Login</h2></div>
+  </div>  
+    <div class="card-body p-lg-5">
+      <form (ngSubmit)="loginUser()">
+        <!-- <div class="form-floating mb-3">
+          <input type="text" class="form-control item" id="username" placeholder="Username"
+          [(ngModel)] = "students.name" name = "name">
+          <label for="floatingInput">Name</label>
+        </div> -->   
+        <div class="form-floating mb-3">
+          <input class="form-control"  required id = "email" type="text" placeholder="name@example.com"
+              [(ngModel)] = "students.email" name = "email">
+              <label for="floatingInput">Email address</label>
+        </div>    
+        <div class="form-floating mb-3">
+          <input class="form-control" required id = "password" type="password" placeholder="Password" required
+          [(ngModel)] = "students.password" name = "password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" name="remember" id="remember">
+          <label class="form-check-label" for="remember">Remember me</label>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+      <div class="card-footer px-lg-6 py-lg-4">
+        <div class="text-sm text-muted">Don't have an account? 
+        <a routerLink="register" class="nav-link" routerLinkActive="active">Register</a>.</div>
+      </div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

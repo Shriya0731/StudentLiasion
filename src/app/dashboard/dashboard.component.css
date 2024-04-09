@@ -1,0 +1,24 @@
+table{
+   
+   
+    height: 10px;
+    overflow-x:scroll;
+    
+}
+button{
+    margin-left:3% ;
+}
+.my-custom-scrollbar {
+    position: relative;
+    width: 500px;
+    height: 230px;
+    overflow: auto;
+    margin-left: 3%;
+    }
+.table-wrapper-scroll-y {
+    display: block;
+}
+.dtHorizontalExampleWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }

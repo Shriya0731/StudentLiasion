@@ -1,0 +1,108 @@
+<div class="center-content">
+    <mat-card class="example-card">
+      <!-- <mat-card-header>
+        <mat-card-title>Add your event participation details</mat-card-title>
+      </mat-card-header> -->
+      <mat-card-content>
+         <mat-tab-group>
+        <!-- / <mat-tab label="Login"> -->
+            <!-- {{user2  | json}} -->
+             <!-- <form id="LoginForm" #loginform="ngForm" (ngSubmit)="loginUser()">
+                <mat-form-field class="example-full-width">
+                <mat-label>Cno</mat-label>
+              <input type="number" matInput placeholder="Cno" value="" name="cno1"   [(ngModel)]="user2.cno" required #cno1="ngModel" required
+              [class.is-invalid]="cno1.invalid && cno1.touched" >
+            </mat-form-field>
+  
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="Password" name="password1"  required  [(ngModel)]="user2.password" #password1="ngModel"
+              [class.is-invalid]="password1.invalid && password1.touched">
+            </mat-form-field>
+            <button mat-button color="primary" type="submit"  [disabled]="loginform.form.invalid" >Login</button>
+        </form> -->
+          <!-- </mat-tab> -->
+          <mat-tab label="Fill Information" >
+            <form id="InfoForm" #InfoForm="ngForm" (ngSubmit)="addInfo()">
+              <!-- <mat-form-field class="example-full-width"> -->
+                 <!-- {{user  | json}} -->
+               <!-- <mat-form-field class="example-full-width" style="margin-top:30px;">
+                 <mat-label>Cno</mat-label>
+                 <input type="number" matInput placeholder="Cno" value="" name="cno" [(ngModel)]="stud_event.cno" required #cno="ngModel" [ngModelOptions]="{standalone: true}" [class.is-invalid]="cno.invalid && cno.touched">
+               </mat-form-field>    
+               <br> -->
+             <br>
+              <mat-form-field class="example-full-width">
+               <mat-label>Event Name</mat-label>
+               <input type="text" matInput placeholder="Event Type" value=""  [(ngModel)]="stud_event.eventname" required  [ngModelOptions]="{standalone: true}" #eventType="ngModel" [class.is-invalid]="eventType.invalid && eventType.touched">
+               </mat-form-field>
+               <br>
+               
+              <!-- </mat-form-field>
+              <mat-form-field class="example-full-width">
+               <mat-label>Event details</mat-label>
+               <input type="text" matInput placeholder="Event details" value=""  [(ngModel)]="info.eventDetails" required  [ngModelOptions]="{standalone: true}" #eventDetails="ngModel" [class.is-invalid]="eventDetails.invalid && eventDetails.touched">
+               
+              </mat-form-field> -->
+             
+              <!-- <mat-form-field class="example-full-width">
+               <mat-label>Event Location</mat-label>
+               <input type="text" matInput placeholder="Location" value=""  [(ngModel)]="info.eventLocation" required  [ngModelOptions]="{standalone: true}" #eventLocation="ngModel" [class.is-invalid]="eventLocation.invalid && eventLocation.touched">
+               
+              </mat-form-field> -->
+             
+              <mat-form-field class="example-full-width">
+               <mat-label>Date Of Event</mat-label>
+               <input type="date" matInput placeholder="DOE" value="" name="DOE" [(ngModel)]="stud_event.doe" required  #DOE="ngModel" [class.is-invalid]="DOE.invalid && DOE.touched">
+               
+              </mat-form-field>
+             <br>
+              <mat-form-field class="example-full-width">
+                 <mat-select name="status" [(ngModel)]="stud_event.participation_status" placeholder="Participation Status">
+                   <mat-option [value]="'First Rank'">First Rank</mat-option>
+                   <mat-option [value]="'second Rank'">second Rank</mat-option>
+                   <mat-option [value]="'Third Rank'">Third Rank</mat-option>
+                   <mat-option [value]="'Participated'">Participated</mat-option>
+                 </mat-select>
+               
+              </mat-form-field> 
+             <br>
+
+             <mat-form-field class="example-full-width">
+                
+                  <mat-select name="category" [(ngModel)]="stud_event.category" placeholder="Category">
+                    <mat-option [value]="'Extracurricular'">Extracurricular</mat-option>
+                    <mat-option [value]="'Cocurricular'">Cocurricular</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              <br>
+
+             <mat-form-field class="example-full-width">
+               <mat-label>Level</mat-label>
+               <mat-select name="countryString" [(ngModel)]="stud_event.level" placeholder="Level">
+                 <mat-option [value]="'InterNational'">InterNational</mat-option>
+                 <mat-option [value]="'National'">National</mat-option>
+                 <mat-option [value]="'State'">State </mat-option>
+                 <mat-option [value]="'College'">College </mat-option>
+               </mat-select> 
+              </mat-form-field>
+             <br>
+              <mat-form-field class="example-full-width">
+               <mat-label>Organised By</mat-label>
+               <input type="text" matInput placeholder="Organised By" value=""  [(ngModel)]="stud_event.oragnizer" required  [ngModelOptions]="{standalone: true}" #organisedBy="ngModel" [class.is-invalid]="organisedBy.invalid && organisedBy.touched">
+              </mat-form-field>
+             <br>
+             <!-- <input type="file" id="myfile" name="myfile"[(ngModel)]="file" oninput=getimage()> -->
+             <button type="submit" class="btn btn-primary btn-lg" style="margin-right: 100px;" [disabled]="InfoForm.form.invalid">Submit</button>
+
+              <!-- <button color="primary" type="submit"   [disabled]="InfoForm.form.invalid">Submit</button> -->
+            </form>
+        
+          </mat-tab>
+        </mat-tab-group>
+  
+      </mat-card-content>
+  
+    </mat-card>
+  </div>
+  

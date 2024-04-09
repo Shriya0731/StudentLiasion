@@ -1,0 +1,20 @@
+<h2>Student list</h2>
+<div class="card">
+    <div class="card-body">
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <td> Name</td>
+            <td>Email ID</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor = "let student of students">
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>           
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
