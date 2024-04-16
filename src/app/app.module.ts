@@ -18,12 +18,16 @@ import {MatTabsModule} from '@angular/material/tabs'
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DatePipe } from '@angular/common';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { HomeComponent } from './home/home.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { AdminComponent } from './admin/admin.component';
+import { CommonModule } from '@angular/common';
 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -36,6 +40,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     EventFormComponent,
     HomeComponent,
     FileUploadComponent,
+    AdminComponent,
   
    
   ],
@@ -53,10 +58,12 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    CommonModule,
+    MatSnackBarModule
 
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

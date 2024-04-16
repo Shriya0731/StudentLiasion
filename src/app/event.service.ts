@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Events } from './events';
 
@@ -8,18 +8,26 @@ import { Events } from './events';
   providedIn: 'root'
 }) 
 export class EventService {
-  private baseURL = "http://localhost:9093/events/student";
+  private baseURL = "https://localhost:8443/events/student";
+  private username = 'user';
+  private password = '';
 
+  private base64Credentials = window.btoa(`${this.username}:${this.password}`);
 
   constructor(private httpClient: HttpClient) { }
   getEventsList(cno:number): Observable<Events[]>{
     const params = new HttpParams().append('cno',cno)
-    return this.httpClient.get<Events[]>(`${this.baseURL}`,{params});
+    const headers = new HttpHeaders({
+      'Authorization': 'Basic ' + this.base64Credentials
+    });
+    return this.httpClient.get<Events[]>(`${this.baseURL}`,{params,headers});
   }
 
   createEvent(event:Events):Observable<Object>{
-    this.baseURL="http://localhost:9093/addevent";
-
-      return this.httpClient.post(`${this.baseURL}`,event);
+    this.baseURL="https://localhost:8443/addevent";
+    const headers = new HttpHeaders({
+      'Authorization': 'Basic ' + this.base64Credentials
+    });
+      return this.httpClient.post(`${this.baseURL}`,event,{headers});
      }
 }

@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+
 <title>Student Details</title>
 <style>
     body {
@@ -106,6 +108,13 @@
             <p>{{user.div}}</p>
         </div>
     </div>
+
+    <h2>Announcements</h2>
+    <a href="http://127.0.0.1:5000" style="text-decoration:none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;color: #0056b3;" >
+        Click here to check latest Announcements
+    </a>
+    <br><br>
+
 
     <h2>Your Events</h2>
     <table class="event-table">

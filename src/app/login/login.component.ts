@@ -41,15 +41,22 @@ export class LoginComponent {
   loginUser(){
      this.studentService.loginStudent(this.students).subscribe(data =>
       {
-        alert("login Successfully");
-        this.sharedService.setCurrentUser(data);
+        if(data!=null){
+          alert("login Successfully");
+          this.sharedService.setCurrentUser(data);
+          
+          console.log(data);
+          this.router.navigate(['/dashboard'])
+        }
+        else{
+          alert("please enter correct id and password")
+        }
         
-        console.log(data.cno);
-        this.router.navigate(['/dashboard']);
 
       },
       error=> alert("please enter correct id and password")
       );
   }
+  
  
 }

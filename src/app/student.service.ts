@@ -29,7 +29,7 @@
 
 // }
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Student } from './student';
 
@@ -37,25 +37,33 @@ import { Student } from './student';
   providedIn: 'root'
 })
 export class StudentService {
+  private username = 'user';
+  private password = '';
 
-  private baseUrl="http://localhost:9093/api/v1/students";
+  private baseUrl="https://localhost:8443/api/v1/students";
+  private base64Credentials = window.btoa(`${this.username}:${this.password}`);
+
   constructor(private httpClient:HttpClient) { }
 
   getStudentList():Observable<Student[]>{
-    this.baseUrl="http://localhost:9093/api/v1/students";
+    this.baseUrl="https://localhost:8443/api/v1/students";
 
     return this.httpClient.get<Student[]>(`${this.baseUrl}`);
   }
 
 loginStudent(student:Student):Observable<Student>{
   student.name ="student"
-  this.baseUrl="http://localhost:9093/api/v1/loginstudent";
+  const headers = new HttpHeaders({
+    'Authorization': 'Basic ' + this.base64Credentials
+  });
+
+  this.baseUrl="https://localhost:8443/api/v1/loginstudent";
     console.log(student)
-    return this.httpClient.post<Student>(`${this.baseUrl}`,student);
+    return this.httpClient.post<Student>(`${this.baseUrl}`,student,{ headers });
     
 }
    createStudent(student:Student):Observable<Object>{
-    this.baseUrl="http://localhost:9093/api/v1/students";
+    this.baseUrl="https://localhost:8443/api/v1/students";
 
       return this.httpClient.post(`${this.baseUrl}`,student);
      }

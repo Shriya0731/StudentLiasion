@@ -6,10 +6,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { StudentEventListComponent } from './student-event-list/student-event-list.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'login',component:LoginComponent},
+  {path:'admin',component:AdminComponent},
   {path:'students',component: StudentEventListComponent},
   {path :'register',component:RegisterComponent},
   {path :'dashboard',component:DashboardComponent},
